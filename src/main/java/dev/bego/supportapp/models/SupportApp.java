@@ -2,21 +2,29 @@ package dev.bego.supportapp.models;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "support_app")
 public class SupportApp {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "requester_name")
     private String requesterName;
-    private LocalDateTime requestDate;
+    
     private String topic;
     private String description;
+
+    @Column(name = "request_date")
+    private LocalDateTime requestDate;
 
     public SupportApp() {
         this.requestDate = LocalDateTime.now();

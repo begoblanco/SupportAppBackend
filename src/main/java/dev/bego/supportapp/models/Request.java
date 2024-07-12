@@ -17,16 +17,10 @@ public class Request {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "requester_name")
-    private String requesterName;
-    
-    @Column(name = "topic")
+
+    private String requesterName;    
     private String topic;
-
-    @Column(name = "description")
     private String description;
-
-    @Column(name = "request_date")
     private LocalDateTime requestDate;
 
     public Request() {

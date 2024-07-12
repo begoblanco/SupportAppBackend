@@ -7,10 +7,10 @@ localhost:8080
 mvn spring-boot:run to run app
 
 ## Endpoints
-GET localhost:8080/api/support-requests/all
-POST localhost:8080/api/support-requests/add
-PUT localhost:8080/api/support-requests/update/{id}
-DELETE localhost:8080/api/support-requests/delete/{id}
+<p>GET localhost:8080/api/support-requests/all</p>
+<p>POST localhost:8080/api/support-requests/add</p>
+<p>PUT localhost:8080/api/support-requests/update/{id}</p>
+<p>DELETE localhost:8080/api/support-requests/delete/{id}</p>
 
 ## Tools
 Spring Boot

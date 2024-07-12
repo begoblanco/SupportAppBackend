@@ -2,26 +2,32 @@ package dev.bego.supportapp.services;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import dev.bego.supportapp.models.SupportApp;
-import dev.bego.supportapp.repositories.SupportAppRepository;
+import dev.bego.supportapp.models.Request;
+import dev.bego.supportapp.repositories.RequestRepository;
 
 @Service
-public class SupportAppService {
-     @Autowired
-    private SupportAppRepository repository;
+public class RequestService {
+    //  @Autowired
+    // private RequestRepository repository;
 
-    public List<SupportApp> findAll() {
+    private final RequestRepository repository;
+
+    public RequestService(RequestRepository repository) {
+        this.repository = repository;
+    }
+
+    public List<Request> findAll() {
         return repository.findAll();
     }
 
-    public SupportApp save(SupportApp supportApp) {
+    public Request save(Request supportApp) {
         return repository.save(supportApp);
     }
 
-    public SupportApp update(Long id, SupportApp supportApp) {
+    public Request update(Long id, Request supportApp) {
         return repository.findById(id).map(existingSupportApp -> {
             existingSupportApp.setRequesterName(supportApp.getRequesterName());
             existingSupportApp.setTopic(supportApp.getTopic());

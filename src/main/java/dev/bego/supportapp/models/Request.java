@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "support_app")
-public class SupportApp {
+public class Request {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,13 +20,16 @@ public class SupportApp {
     @Column(name = "requester_name")
     private String requesterName;
     
+    @Column(name = "topic")
     private String topic;
+
+    @Column(name = "description")
     private String description;
 
     @Column(name = "request_date")
     private LocalDateTime requestDate;
 
-    public SupportApp() {
+    public Request() {
         this.requestDate = LocalDateTime.now();
     }
 

@@ -19,11 +19,11 @@ public class RequestService {
         this.repository = repository;
     }
 
-    public List<Request> findAll() {
+    public List<Request> getAll() {
         return repository.findAll();
     }
 
-    public Request save(Request supportApp) {
+    public Request store(Request supportApp) {
         return repository.save(supportApp);
     }
 

@@ -52,7 +52,7 @@ public class RequestServiceTest {
         requests.add(request2);
 
         when(repository.findAll()).thenReturn(requests);
-        List<Request> result = service.findAll();
+        List<Request> result = service.getAll();
 
         assertThat(result.size(), equalTo(2));
         assertThat(result.get(0).getRequesterName(), equalTo(request1.getRequesterName()));
@@ -68,7 +68,7 @@ public class RequestServiceTest {
         request.setDescription("Description ex 1");
 
         when(repository.save(request)).thenReturn(request);
-        Request result = service.save(request);
+        Request result = service.store(request);
 
         assertThat(result.getId(), equalTo(request.getId()));
         assertThat(result.getRequesterName(), equalTo(request.getRequesterName()));

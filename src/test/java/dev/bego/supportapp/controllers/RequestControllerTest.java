@@ -60,7 +60,7 @@ public class RequestControllerTest {
         requests.add(request1);
         requests.add(request2);
 
-        when(service.findAll()).thenReturn(requests);
+        when(service.getAll()).thenReturn(requests);
         MockHttpServletResponse response = mockMvc.perform(get("/api/support-requests")
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON))

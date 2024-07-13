@@ -2,7 +2,8 @@ package dev.bego.supportapp.controllers;
 
 import java.util.List;
 
-import org.springframework.http.HttpStatusCode;
+import org.springframework.http.HttpStatus;
+// import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 // import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -37,7 +38,8 @@ public class RequestController {
     @PostMapping("/add")
     public ResponseEntity<Request> createRequest(@RequestBody Request newRequest) {
         Request createdRequest = service.store(newRequest);
-        return ResponseEntity.status(HttpStatusCode.valueOf(201)).body(createdRequest);
+        //return ResponseEntity.status(HttpStatusCode.valueOf(201)).body(createdRequest);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdRequest);
     }
 
     @PutMapping("/update/{id}")

@@ -61,7 +61,8 @@ public class RequestControllerTest {
         requests.add(request2);
 
         when(service.getAll()).thenReturn(requests);
-        MockHttpServletResponse response = mockMvc.perform(get("/api/support-requests")
+        
+        MockHttpServletResponse response = mockMvc.perform(get("/api/support-requests/all")
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())

@@ -28,6 +28,12 @@ public class RequestController {
         return service.getAll();
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Request> getRequestById(@PathVariable Long id) {
+        Request request = service.findById(id).orElseThrow(() -> new RuntimeException("Request not found"));
+        return ResponseEntity.ok(request);
+    }
+
     @PostMapping("/add")
     public ResponseEntity<Request> createRequest(@RequestBody Request newRequest) {
         Request createdRequest = service.store(newRequest);

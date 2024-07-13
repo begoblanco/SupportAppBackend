@@ -8,9 +8,11 @@ mvn spring-boot:run to run app
 
 ## Endpoints
 <p>GET localhost:8080/api/support-requests/all</p>
+<p>GET localhost:8080/api/support-requests/{id}</p>
 <p>POST localhost:8080/api/support-requests/add</p>
 <p>PUT localhost:8080/api/support-requests/update/{id}</p>
 <p>DELETE localhost:8080/api/support-requests/delete/{id}</p>
 
 ## Tools
 Spring Boot
+Postman

@@ -1,8 +1,6 @@
 package dev.bego.supportapp.controllers;
 
 import java.util.List;
-
-// import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 // import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -45,9 +43,9 @@ public class RequestController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<Request>updateRequest(@PathVariable Long id, @RequestBody Request updatedRequest) {
+    public ResponseEntity<Request> updateRequest(@PathVariable Long id, @RequestBody Request updatedRequest) {
         Request updated = service.update(id, updatedRequest);
-    return ResponseEntity.ok(updated);
+        return ResponseEntity.ok(updated);
     }
 
     @DeleteMapping("/delete/{id}")
@@ -57,3 +55,4 @@ public class RequestController {
     }
     
 }
+

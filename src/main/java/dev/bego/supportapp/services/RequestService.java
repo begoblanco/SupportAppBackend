@@ -24,7 +24,7 @@ public class RequestService {
     }
 
     public Request store(Request request) {
-        request.setRequestDate(LocalDateTime.now());
+        // request.setRequestDate(LocalDateTime.now());
         return repository.save(request);
     }
 

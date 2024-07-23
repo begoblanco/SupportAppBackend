@@ -26,7 +26,14 @@ public class Request {
     private LocalDateTime requestDate;
 
     public Request() {
-        //this.requestDate = LocalDateTime.now();
+    }
+
+    public Request(Long id, String requesterName, String topic, String description, LocalDateTime requestDate) {
+        this.id = id;
+        this.requesterName = requesterName;
+        this.topic = topic;
+        this.description = description;
+        this.requestDate = requestDate;
     }
 
     public Long getId() {

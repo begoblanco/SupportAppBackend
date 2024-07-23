@@ -2,7 +2,8 @@ package dev.bego.supportapp.controllers;
 
 import java.util.List;
 
-import org.springframework.http.HttpStatus;
+// import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 // import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 // import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import dev.bego.supportapp.models.Request;
 import dev.bego.supportapp.services.RequestService;
 
 @RestController
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 @RequestMapping("/api/support-requests")
 public class RequestController {
 
@@ -38,8 +40,8 @@ public class RequestController {
     @PostMapping("/add")
     public ResponseEntity<Request> createRequest(@RequestBody Request newRequest) {
         Request createdRequest = service.store(newRequest);
-        //return ResponseEntity.status(HttpStatusCode.valueOf(201)).body(createdRequest);
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdRequest);
+        return ResponseEntity.status(HttpStatusCode.valueOf(201)).body(createdRequest);
+        // return ResponseEntity.status(HttpStatus.CREATED).body(createdRequest);
     }
 
     @PutMapping("/update/{id}")

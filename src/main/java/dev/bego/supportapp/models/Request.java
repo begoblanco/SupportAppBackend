@@ -11,7 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "support_app")
+@Table(name = "support_app") //las tablas como las entidades pero en plural (deberia ser requests en este caso))
 public class Request {
 
     @Id
